@@ -61,7 +61,7 @@ def build_prompt(subj: str, homework: str, math_question: str = "", math_answer:
 def call_gemini(prompt: str, key: str) -> str:
     import google.generativeai as genai
     genai.configure(api_key=key)
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text
 
